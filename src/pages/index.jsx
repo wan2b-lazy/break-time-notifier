@@ -1,23 +1,37 @@
 export default function Home() {
   return (
     <>
-      <h1>アラーム設定</h1>
+      <h1 className="title">アラーム設定</h1>
 
-      <form action="#">
+      <form action="#" className="form">
         <ul>
-          <li>
-            <label htmlFor="#">間隔（分）</label>
-            <input type="number" name="#" id="#" />
+          <li className="form__inputItem">
+            <label htmlFor="interval" className="form__label">
+              間隔(分)
+            </label>
+            <input
+              type="number"
+              name="interval"
+              id="interval"
+              className="form__input"
+            />
           </li>
-          <li>
-            <label htmlFor="#">終了予定</label>
-            <input type="number" name="#" id="#" />
-          </li>
-          <li>
-            <button type="button">活動開始</button>
+          <li className="form__inputItem">
+            <label htmlFor="closingTime" className="form__label">
+              終了予定
+            </label>
+            <input
+              type="time"
+              name="closingTime"
+              id="closingTime"
+              className="form__input"
+            />
           </li>
         </ul>
+        <button type="button" className="button">
+          活動開始
+        </button>
       </form>
     </>
-  )
+  );
 }
