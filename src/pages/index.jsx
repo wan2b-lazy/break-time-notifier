@@ -6,8 +6,8 @@ export default function Home() {
       <h1 className={styles.title}>アラーム設定</h1>
 
       <form action="#" className={styles.form}>
-        <ul className={styles.form__inputItems}>
-          <li className="form__inputItem">
+        <div className={styles.form__inputItems}>
+          <div className={styles.form__inputItem}>
             <label htmlFor="interval" className={styles.form__label}>
               間隔(分)
             </label>
@@ -17,8 +17,8 @@ export default function Home() {
               id="interval"
               className={styles.form__input}
             />
-          </li>
-          <li className="form__inputItem">
+          </div>
+          <div className={styles.form__inputItem}>
             <label htmlFor="closingTime" className={styles.form__label}>
               終了予定
             </label>
@@ -28,8 +28,8 @@ export default function Home() {
               id="closingTime"
               className={styles.form__input}
             />
-          </li>
-        </ul>
+          </div>
+        </div>
         <button type="button" className={styles.button}>
           活動開始
         </button>

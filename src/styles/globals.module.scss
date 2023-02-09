@@ -1,11 +1,13 @@
 /* .buttonは後でコンポーネントとして分離する予定 */
 .button {
-  padding: 5px;
-  font: bold 0.6em sans-serif;
-  border: 2px solid #333;
-  border-radius: 5px;
+  padding: 10px 25px;
+  font: normal 2em sans-serif;
+  border: 1px solid #333;
+  border-radius: 10px;
   background: none;
   cursor: pointer;
+
+  margin: 15px;
 }
 
 .button:hover,
@@ -17,10 +19,41 @@
 /* .button ここまで分離 */
 
 .title {
+  text-align: center;
 }
 
 .form {
+  width: 400px;
+  height: 350px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   &__inputItems {
-    list-style: none;
+    width: 100%;
+  }
+
+  &__inputItem {
+    position: relative;
+    margin-block-end: 40px;
+  }
+
+  &__label {
+    font: normal 2em sans-serif;
+  }
+
+  &__input {
+    position: absolute;
+    width: 100px;
+    padding: 0;
+    margin: 0;
+    height: 2.4em;
+
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
