@@ -10,3 +10,5 @@ export default function AlarmNotification() {
     </>
   );
 }
+
+AlarmNotification.pageTitle = "AlarmNotification";

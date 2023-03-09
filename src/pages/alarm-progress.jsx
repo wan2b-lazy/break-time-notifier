@@ -9,3 +9,5 @@ export default function AlarmProgress() {
     </>
   );
 }
+
+AlarmProgress.pageTitle = "AlarmProgress";

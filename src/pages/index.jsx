@@ -1,6 +1,6 @@
 import styles from "@/styles/globals.module.scss";
 
-export default function Home() {
+export default function Index() {
   return (
     <>
       <h1 className={styles.title}>アラーム設定</h1>
@@ -15,6 +15,7 @@ export default function Home() {
               type="number"
               name="interval"
               id="interval"
+              required
               className={styles.form__input}
             />
           </div>
@@ -37,3 +38,5 @@ export default function Home() {
     </>
   );
 }
+
+Index.pageTitle = "Index";
