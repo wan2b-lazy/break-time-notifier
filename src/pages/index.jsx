@@ -1,6 +1,12 @@
 import styles from "@/styles/globals.module.scss";
 
-export default function Index() {
+export default function Index({ setInterval, setClosingTime, startAlarm }) {
+  //onClickが発火したときにsetIntervalとsetClosingTimeを実行したいが、再レンダリングせずにstartAlarmを実行すると、intervalとclosingTimeがnullから更新されないままstartAlarmが実行されてしまう問題を解決したい
+  const handleClick = () => {
+    setInterval(0);
+    setClosingTime(0);
+  };
+
   return (
     <>
       <h1 className={styles.title}>アラーム設定</h1>
@@ -31,7 +37,7 @@ export default function Index() {
             />
           </div>
         </div>
-        <button type="button" className={styles.button}>
+        <button type="button" className={styles.button} onClick={handleClick}>
           活動開始
         </button>
       </form>
