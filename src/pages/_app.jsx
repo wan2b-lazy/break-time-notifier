@@ -7,8 +7,8 @@ export default function App({ Component, pageProps }) {
   const [interval, setInterval] = useState(null);
   const [closingTime, setClosingTime] = useState(null);
 
-  const startAlarm = () => {
-    console.log(interval, closingTime);
+  const startAlarm = (interval) => {
+    console.log(interval);
   };
 
   const stopAlarm = () => {

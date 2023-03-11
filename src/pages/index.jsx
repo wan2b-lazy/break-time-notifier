@@ -1,10 +1,26 @@
 import styles from "@/styles/globals.module.scss";
+import { useRouter } from "next/router";
 
 export default function Index({ setInterval, setClosingTime, startAlarm }) {
-  //onClickが発火したときにsetIntervalとsetClosingTimeを実行したいが、再レンダリングせずにstartAlarmを実行すると、intervalとclosingTimeがnullから更新されないままstartAlarmが実行されてしまう問題を解決したい
-  const handleClick = () => {
-    setInterval(0);
-    setClosingTime(0);
+  const router = useRouter();
+
+  //index.jsxではsetIntervalを実行した後startAlarmを実行するまでに再レンダリングできないため、活動開始ボタンを押したときに_app.jsxのintervalを参照することなく[間隔（分）input]を参照するようにする。
+  const handleClick = (event) => {
+    event.preventDefault();
+    if (document.querySelector("#interval").value) {
+      const inputValueOfInterval = Number(
+        document.querySelector("#interval").value
+      );
+      const inputValueOfClosingTime = Number(
+        document.querySelector("#closingTime").value
+      );
+
+      setInterval(inputValueOfInterval);
+      setClosingTime(inputValueOfClosingTime);
+      startAlarm(inputValueOfInterval);
+
+      router.push("/alarm-progress");
+    }
   };
 
   return (
@@ -37,7 +53,7 @@ export default function Index({ setInterval, setClosingTime, startAlarm }) {
             />
           </div>
         </div>
-        <button type="button" className={styles.button} onClick={handleClick}>
+        <button type="submit" className={styles.button} onClick={handleClick}>
           活動開始
         </button>
       </form>
