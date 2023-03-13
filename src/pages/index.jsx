@@ -11,6 +11,8 @@ export default function Index({ setInterval, setClosingTime, startAlarm }) {
       const inputValueOfInterval = Number(
         document.querySelector("#interval").value
       );
+
+      //closingTimeは4桁の文字列だから、これをどう処理するかを考えておく必要がある
       const inputValueOfClosingTime = Number(
         document.querySelector("#closingTime").value
       );
